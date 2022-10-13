@@ -5,8 +5,8 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "test.txt"
+#     paths:
+#       - "test.txt"
 
 jobs:
   slackNotification:
@@ -17,4 +17,7 @@ jobs:
     - name: Slack Notification
       uses: rtCamp/action-slack-notify@v2
       env:
+        SLACK_ICON: https://avatars.githubusercontent.com/u/62228968?v=4
         SLACK_WEBHOOK: ${{ secrets.WEBHOOKURL }}
+        SLACK_MESSAGE: test.txtが変更されました。
+        SLACK_USERNAME: test.txt notifier
