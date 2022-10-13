@@ -1,0 +1,15 @@
+name: config
+
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "test.txt"
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello World!"
